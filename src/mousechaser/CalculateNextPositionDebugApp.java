@@ -22,20 +22,22 @@ public class CalculateNextPositionDebugApp {
 		while (!StdDraw.isKeyPressed(KeyEvent.VK_ESCAPE)) {
 			double tCurr = Timing.getCurrentTimeInSeconds();
 			double tDelta = tCurr - tPrev;
-			StdDraw.clear();
-			StdDraw.setPenColor(BALL_COLOR);
-			ChaseTheMouse.drawBall(p0, radius);
-			StdDraw.setPenColor(BOUNDARY_COLOR);
-			StdDraw.circle(p0[0], p0[1], desiredMaxVectorLength);
-			double[] mousePosition = ChaseTheMouse.getMousePosition();
-			double speedNecessaryToAchieveDesiredMaxVectorLength = desiredMaxVectorLength / tDelta;
-			double[] p1 = ChaseTheMouse.calculateNextPosition(p0, mousePosition,
-					speedNecessaryToAchieveDesiredMaxVectorLength, tDelta);
-			StdDraw.setPenColor(VECTOR_COLOR);
-			StdDraw.line(p0[0], p0[1], p1[0], p1[1]);
-			StdDraw.show();
-			StdDraw.pause(1);
-			tPrev = tCurr;
+			if(tDelta > 0.0) {
+				StdDraw.clear();
+				StdDraw.setPenColor(BALL_COLOR);
+				ChaseTheMouse.drawBall(p0, radius);
+				StdDraw.setPenColor(BOUNDARY_COLOR);
+				StdDraw.circle(p0[0], p0[1], desiredMaxVectorLength);
+				double[] mousePosition = ChaseTheMouse.getMousePosition();
+				double speedNecessaryToAchieveDesiredMaxVectorLength = desiredMaxVectorLength / tDelta;
+				double[] p1 = ChaseTheMouse.calculateNextPosition(p0, mousePosition,
+						speedNecessaryToAchieveDesiredMaxVectorLength, tDelta);
+				StdDraw.setPenColor(VECTOR_COLOR);
+				StdDraw.line(p0[0], p0[1], p1[0], p1[1]);
+				StdDraw.show();
+				tPrev = tCurr;
+			}
+			StdDraw.pause(10);
 		}
 		System.exit(0);
 	}
