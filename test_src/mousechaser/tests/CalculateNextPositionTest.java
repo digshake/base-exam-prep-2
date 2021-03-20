@@ -65,7 +65,7 @@ public class CalculateNextPositionTest {
 		assertEquals(lengthMessage, expected.length, actual.length);
 
 		String contentsMessage = ChaseTheMouseTestMessages.toArrayEqualityMessage(expected, actual);
-		assertArrayEquals(contentsMessage, expected, actual, 0.0);
+		assertArrayEquals(contentsMessage, expected, actual, 0.0001);
 	}
 
 	@Parameterized.Parameters(name = "{0} = {1} * {2}")
