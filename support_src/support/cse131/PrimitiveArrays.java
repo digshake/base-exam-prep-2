@@ -24,4 +24,28 @@ public class PrimitiveArrays {
 	public static List<Double> toListOfDoubles(double[] array) {
 		return Arrays.stream(array).boxed().collect(Collectors.toList());
 	}
+
+	public static boolean[][] deepCopyOf(boolean[][] matrix) {
+		boolean[][] copy = new boolean[matrix.length][];
+		for (int r = 0; r < matrix.length; ++r) {
+			copy[r] = Arrays.copyOf(matrix[r], matrix[r].length);
+		}
+		return copy;
+	}
+
+	public static int[][] deepCopyOf(int[][] matrix) {
+		int[][] copy = new int[matrix.length][];
+		for (int r = 0; r < matrix.length; ++r) {
+			copy[r] = Arrays.copyOf(matrix[r], matrix[r].length);
+		}
+		return copy;
+	}
+
+	public static double[][] deepCopyOf(double[][] matrix) {
+		double[][] copy = new double[matrix.length][];
+		for (int r = 0; r < matrix.length; ++r) {
+			copy[r] = Arrays.copyOf(matrix[r], matrix[r].length);
+		}
+		return copy;
+	}
 }

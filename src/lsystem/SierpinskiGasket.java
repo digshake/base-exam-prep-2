@@ -11,8 +11,8 @@ import support.cse131.NotYetImplementedException;
 /**
  * @author Dennis Cosgrove (http://www.cse.wustl.edu/~cosgroved/)
  */
-public class SierpinskiGasget {
-	public static Mosaic gasget(double sideLength) {
+public class SierpinskiGasket {
+	public static Mosaic gasket(double sideLength) {
 		
 			// Delete the line below and implement this method
 			throw new NotYetImplementedException();
@@ -20,6 +20,6 @@ public class SierpinskiGasget {
 	}
 
 	public static void main(String[] args) {
-		showCentered(gasget(1.0), 0.9);
+		showCentered(gasket(1.0), 0.9);
 	}
 }
