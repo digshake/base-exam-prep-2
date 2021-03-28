@@ -32,7 +32,7 @@ public class FutureValueTest {
 	@Test
 	public void test() {
 		double actual = NPV.futureValue(dollars, years, r);
-		assertEquals(expected, actual, 0.0001);
+		assertEquals(expected, actual, expected*0.0000001);
 	}
 
 	@Parameterized.Parameters(name = "dollars: {0}; years: {1}; r: {2}")
