@@ -10,9 +10,8 @@ import java.util.Scanner;
  * @author Dennis Cosgrove (http://www.cse.wustl.edu/~cosgroved/)
  */
 public class Scanners {
-	public static ArgsProcessor createArgsProcessorFromFile(File file) throws FileNotFoundException {
+	public static ArgsProcessor createArgsProcessorFromScanner(Scanner scanner) {
 		List<String> list = new LinkedList<>();
-		Scanner scanner = new Scanner(file);
 		try {
 			while (scanner.hasNext()) {
 				String s = scanner.next();
@@ -23,5 +22,9 @@ public class Scanners {
 		}
 		String[] argsForArgsProcessor = list.toArray(new String[list.size()]);
 		return new ArgsProcessor(argsForArgsProcessor);
+	}
+
+	public static ArgsProcessor createArgsProcessorFromFile(File file) throws FileNotFoundException {
+		return createArgsProcessorFromScanner(new Scanner(file));
 	}
 }
