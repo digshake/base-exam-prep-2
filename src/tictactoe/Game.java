@@ -2,15 +2,14 @@ package tictactoe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
-
-import support.cse131.ArgsProcessor;
 
 public class Game {
 
 	public static void main(String[] args) {
-		ArgsProcessor ap = new ArgsProcessor(args);
+		Scanner in = new Scanner(System.in);
 		String[][] board = TicTacToe.genBoard();
 		boolean playing = true;
 		boolean humansTurn = Math.random() < 0.5;
@@ -43,7 +42,7 @@ public class Game {
 			}
 			else {
 				if (humansTurn) {
-					Move m = promptForAvailableMove(locs, ap);
+					Move m = promptForAvailableMove(locs, in);
 					locs.remove(m);
 					TicTacToe.makeMove(humanIsX ? "x" : "o", board, m.row, m.col);
 					System.out.println("After your move");
@@ -71,11 +70,13 @@ public class Game {
 		return ans;
 	}
 	
-	private static Move promptForAvailableMove(List<Move> avail, ArgsProcessor ap) {
+	private static Move promptForAvailableMove(List<Move> avail, Scanner in) {
 		Move ans = null;
 		do {
-			int row = ap.nextInt("Which row?");
-			int col = ap.nextInt("Which column?");
+			System.out.print("Which row? ");
+			int row = in.nextInt();
+			System.out.print("Which col? ");
+			int col = in.nextInt();
 			ans = new Move(row, col);
 			if (!avail.contains(ans)) {
 				message("Move " + ans + " not available; try again");

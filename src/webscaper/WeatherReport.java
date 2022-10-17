@@ -1,11 +1,11 @@
 package webscaper;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import support.cse131.ArgsProcessor;
 import support.cse131.NotYetImplementedException;
 
 public class WeatherReport {
@@ -58,9 +58,9 @@ public class WeatherReport {
 	}
 
 	public static void main(String[] args) throws IOException {
-		ArgsProcessor ap = new ArgsProcessor(args);
-
-		int zipCode = ap.nextInt("What zip code?");
+		Scanner in = new Scanner(System.in);
+		System.out.println("What zip code? ");
+		int zipCode = in.nextInt();
 
 		WeatherReport weather = new WeatherReport(zipCode);
 

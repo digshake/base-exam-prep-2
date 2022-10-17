@@ -3,9 +3,9 @@ package linearregression;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import edu.princeton.cs.introcs.StdDraw;
-import support.cse131.ArgsProcessor;
 
 public class DebugAppRandomData {
 	public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class DebugAppRandomData {
 		Color LINE_COLOR = Color.RED;
 		StdDraw.enableDoubleBuffering();
 		StdDraw.setPenRadius(0.007);
-		ArgsProcessor ap = new ArgsProcessor(args);
+		Scanner in = new Scanner(System.in);
 		int n = 2;
 		try {
 			while (true) {
@@ -34,7 +34,8 @@ public class DebugAppRandomData {
 					StdDraw.line(0, predictor.predict(0), 1, predictor.predict(1));
 				}
 				StdDraw.show();
-				n = ap.nextInt("How many points?");
+				System.out.println("How many points?");
+				n = in.nextInt();
 			}
 		} catch (NumberFormatException nfe) {
 			System.exit(0);

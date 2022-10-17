@@ -1,12 +1,12 @@
 package calculator;
 
-import support.cse131.ArgsProcessor;
+import java.util.Scanner;
 
 public class Calculator {
 	public static void main(String[] args) {
-		ArgsProcessor ap = new ArgsProcessor(args);
+		Scanner in = new Scanner(System.in);
 
-		String text = ap.nextString();
+		String text = in.nextLine();
 		
 		// TODO:
 	}
