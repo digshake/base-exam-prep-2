@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import memorymatch.MemoryMatchBoard;
+import nonexam.memorymatch.MemoryMatchBoard;
 
 /**
  * @author Dennis Cosgrove (http://www.cse.wustl.edu/~cosgroved/)

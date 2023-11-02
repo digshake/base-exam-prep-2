@@ -1,6 +1,6 @@
 package fibonacci.tests;
 
-import fibonacci.Fibonacci;
+import nonexam.fibonacci.Fibonacci;
 
 /**
  * @author Dennis Cosgrove (http://www.cse.wustl.edu/~cosgroved/)

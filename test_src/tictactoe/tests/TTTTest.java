@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import tictactoe.TicTacToe;
+import nonexam.tictactoe.TicTacToe;
 
 public class TTTTest {
 

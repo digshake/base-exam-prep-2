@@ -28,8 +28,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 
 import fibonacci.ExpectedFibonaccis;
-import fibonacci.Fibonacci;
-import fibonacci.Graph;
+import nonexam.fibonacci.Fibonacci;
+import nonexam.fibonacci.Graph;
 import support.cse131.Timing;
 import support.cse131.gui.LookAndFeels;
 
