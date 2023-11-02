@@ -5,77 +5,79 @@ import java.awt.event.KeyEvent;
 
 import edu.princeton.cs.introcs.StdDraw;
 
-
+/*
+ * Instructions for this extension can be found here:
+ * 
+ * https://131text.com/ns/books/published/csjava/Extensions/6.06.html
+ */
 public class BucketTool {
-	
-	
- protected Color[][] screen;
- double halfPixelWidth;
- double halfPixelHeight;
-final  double SCREEN_WIDTH = 1.0;
-final  double SCREEN_HEIGHT = 1.0;
+	protected Color[][] screen;
+	protected double halfPixelWidth; 
+	protected double halfPixelHeight;
+	protected final double SCREEN_WIDTH = 1.0;
+	protected final double SCREEN_HEIGHT = 1.0;
 
-public BucketTool(int dimensions){
-	this.screen = new Color[dimensions][dimensions];
-	for(int i = 0; i < screen.length; i++) {
-		for(int j = 0; j < screen[0].length; j++) {
-			screen[i][j] = StdDraw.WHITE;
-		}
-	}
-	
-	halfPixelWidth = 0.5/(double)dimensions;
-	halfPixelHeight = 0.5/(double)dimensions;
-	
-}
-	
-	public void drawPixel(int r, int c) {
-		double xcoord = (double) r / screen.length;
-		double ycoord = (double) c / screen[0].length;
-		StdDraw.setPenColor(screen[r][c]);
-		StdDraw.filledRectangle(xcoord, ycoord, halfPixelWidth, halfPixelHeight);
-	}
-	
-	public void drawScreen() {
-		for (int r = 0; r < screen.length; r++) {
-			for(int c = 0; c < screen[0].length; c++) { //no this is java, not c++
-				drawPixel(r, c);
+	/**
+	 * Provided: A constructor for the BucketTool objeect
+	 * @param dimensions
+	 */
+	public BucketTool(int dimensions){
+		// initialize the screen array to desired resolution (the higher dimensions, the more detailed the image)
+		this.screen = new Color[dimensions][dimensions];
+		// set everything in the image to white initially
+		for(int i = 0; i < screen.length; i++) {
+			for(int j = 0; j < screen[0].length; j++) {
+				screen[i][j] = StdDraw.WHITE;
 			}
 		}
-		
+		// set the pixel size, if you'd like it more detailed, decrease the 0.5 value
+		halfPixelWidth = 0.5/(double)dimensions;
+		halfPixelHeight = 0.5/(double)dimensions;
 	}
 
+	/**
+	 * Draws a pixel with the color at the given indices 
+	 * @param r The row in screen 
+	 * @param c The column in screen
+	 */
+	public void drawPixel(int r, int c) {
+		// TODO
+	}
+
+	/**
+	 * Draw everything in the screen array
+	 */
+	public void drawScreen() {
+		// TODO
+	}
+
+	/**
+	 * Get the x index in screen from the x coordinate on the canvas
+	 * @param x: x coordinate
+	 * @return the corresponding index in the screen array (row)
+	 */
 	public int getXIndex(double x) {
-		return (int) (x * (1.0/SCREEN_WIDTH) * screen.length);
+		return 0;
 	}
-	
+
+	/**
+	 * Get the y index in screen from the y coordinate on the canvas
+	 * @param y: y coordinate
+	 * @return the corresponding index in the screen array (column)
+	 */
 	public int getYIndex(double y) {
-		return (int) (y * (1.0/SCREEN_HEIGHT)* screen[0].length);
-	}
-	public void fill(Color target, Color fillcolor, int x, int y) {
-		if (target.equals(fillcolor)) {
-			return;
-		}
-		if (x >= screen.length || x < 0 || y >= screen[0].length || y < 0) {
-			return;
-		}
-		if(!screen[x][y].equals(target)) {
-			return;
-		}
-		screen[x][y] = fillcolor;
-		drawPixel(x, y);
-		StdDraw.show();
-		
-		fill(target, fillcolor, x, y+1);
-		fill(target, fillcolor, x, y-1);
-		
-		fill(target, fillcolor, x+1, y-1);
-		fill(target, fillcolor, x+1, y);
-		fill(target, fillcolor, x+1, y+1);
-		
-		fill(target, fillcolor, x-1, y-1);
-		fill(target, fillcolor, x-1, y);
-		fill(target, fillcolor, x-1, y+1);
+		return 0;
 	}
 	
-	
+	/**
+	 * Fill the screen (or available area)
+	 * @param currentColor: the current color of the area
+	 * @param fillColor: the color to fill in the area 
+	 * @param row: the current row
+	 * @param col: the current column
+	 */
+	public void fill(Color currentColor, Color fillColor, int row, int col) {
+		// TODO
+		StdDraw.show(); // leave this here to see the color fill in real-time
+	}
 }
